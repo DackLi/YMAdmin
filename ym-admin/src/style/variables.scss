@@ -1,0 +1,14 @@
+// 变量文件颜色字体
+
+// 字体大小
+$fontSize12: 12px;
+$fontSize14: 14px;
+$fontSize16: 16px;
+
+// 字体颜色和背景
+$fontDefault: #306ab9;
+$mainBackgroundColor: #f9f9f9;
+$bodyBackgroundColor: #e9ecf3;
+body{
+  background: $bodyBackgroundColor;
+}
