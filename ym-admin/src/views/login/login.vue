@@ -48,7 +48,19 @@ export default {
   },
   methods: {
     handleLogin () {
-    
+      this.$refs.loginForm.validate( valid => {
+        if(valid) {
+          this.loading = true
+          this.$store.dispatch('LoginUserName', this.loginForm).then(() => {
+            // 登陆成功 记录token 获取用户信息成功之后跳转到用户默认页面
+            this.loading = false
+            console.log(this.$router)
+            this.$router.push({ path: this.redirect || '/' })
+          }).catch((error) => {
+            this.loading = false
+          })
+        }
+      })
     }
   },
 }

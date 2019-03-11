@@ -1,5 +1,9 @@
-let baseUrl = "/api";
 
+export default class Config {
+  construcor() {
+  }
+}
+let baseUrl
 switch (process.env.NODE_ENV) {
   case "development":
     baseUrl = "api"; // 本地请求
@@ -11,5 +15,5 @@ switch (process.env.NODE_ENV) {
     baseUrl = "http线上"; // 生成接口
     break;
 }
-
-export default baseUrl;
+Config.baseUrl = baseUrl;
+Config.timeout = 50000;

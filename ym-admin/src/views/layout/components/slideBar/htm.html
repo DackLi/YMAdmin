@@ -1,0 +1,231 @@
+<style type="text/css">
+  .trans {
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+  }
+
+  .tab-nav {
+    border-bottom: 2px solid rgba(0, 0, 0, .04);
+    text-align: center;
+  }
+
+  .tab-nav span {
+    color: #878c94;
+    margin-bottom: -2px;
+    padding: 20px 10px;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .tab-nav span.active {
+    color: #a0e32b;
+    border-bottom: 2px solid #a0e32b;
+  }
+
+  .tab-item {
+    display: none;
+  }
+
+  .tab-content .active {
+    display: block;
+  }
+
+  .tab-item ul {
+    list-style: none;
+    margin: 0;
+  }
+
+  .tab-item ul li {
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .tab-item ul li .box-title {
+    padding-left: 40px;
+    font-size: 18px;
+    font-weight: 700;
+    position: relative;
+    line-height: 22px;
+  }
+
+  .tab-item ul li .box-title .box-icon {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    transform: translateY(-50%);
+  }
+
+  .tab-item ul li .box-title .minus {
+    background-image: url('https://cdn.shopify.com/s/files/1/0023/2525/0115/files/minus.png?11400942997929230439');
+  }
+
+  .tab-item ul li .box-title .lk-add {
+    background-image: url('https://cdn.shopify.com/s/files/1/0023/2525/0115/files/add_2.png?10024196016682266529');
+  }
+
+  .box-hide {
+    display: none;
+    padding-left: 40px;
+    padding-top: 10px;
+  }
+
+  .tab-item .active .box-hide {
+    display: block;
+    line-height: 20px;
+  }
+</style>
+<div class="faq-main">
+  <div class="tab-main">
+    <div class="tab-nav">
+      <span class="active trans">Shipping</span>
+      <span class="trans">Order</span> 
+      <span class="trans">Website</span>
+      <span class="trans">Company</span> 
+    </div>
+    <div class="tab-content">
+      <div class="tab-item active">
+        <ul>
+          <li>
+            <div class="box-title"><span class="box-icon minus"></span>Do you ship outside the continental United
+              States?</div>
+            <div class="box-hide">We only support domestic shipping in USA</div>
+          </li>
+          <li>
+            <div class="box-title"><span class="box-icon minus"></span>How long will it take for me to receive my
+              items?</div>
+            <div class="box-hide">It is about 5-7 business days.</div>
+          </li>
+          <li>
+            <div class="box-title"><span class="box-icon minus"></span>How will I know when my order ships?</div>
+            <div class="box-hide">We will upload the tracking number to your order once it is shipped.</div>
+          </li>
+          <li>
+            <div class="box-title"><span class="box-icon minus"></span>How will I know when my order is to be
+              delivered?</div>
+            <div class="box-hide">You can keep an eye on the tracking information</div>
+          </li>
+          <li>
+            <div class="box-title"><span class="box-icon minus"></span>What does your FREE SHIPPING include?</div>
+            <div class="box-hide">This will include a standard shipment through the preferred carrier to your curbside.</div>
+          </li>
+          <li>
+            <div class="box-title"><span class="box-icon minus"></span>Can I upgrade my standard delivery?</div>
+            <div class="box-hide">Sorry,we do not support upgrade standard delivery at present,but we are still keep
+              searching more and more better carrier to send our chair.</div>
+          </li>
+          <li>
+            <div class="box-title"><span class="box-icon minus"></span>What is included in the White Glove Delivery?</div>
+            <div class="box-hide">We currently do not support White Glove Delivery.</div>
+          </li>
+          <li>
+            <div class="box-title"><span class="box-icon minus"></span>What should I do if my order was damaged during
+              shipment?</div>
+            <div class="box-hide">You can directly contact and provide us the picture about the damage,then we will
+              work out a proper solution for you once we confirm it.</div>
+          </li>
+        </ul>
+      </div>
+      <div class="tab-item">
+        <ul>
+          <li>
+            <div class="box-title"><span class="box-icon minus"></span>Can I place my order over the phone?</div>
+            <div class="box-hide">Yes, you can contact (800) 513-5727 if any question</div>
+          </li>
+          <li>
+            <div class="box-title"><span class="box-icon minus"></span>How will I know if my order has been processed?</div>
+            <div class="box-hide">Once your order is submitted,paid or shipped you will instantly receive a
+              confirmation e-mail about each status.</div>
+          </li>
+          <li>
+            <div class="box-title"><span class="box-icon minus"></span>When is payment taken for my order?</div>
+            <div class="box-hide">Your payment will be deducted once you pay for it,but it will be remained in the
+              paypaltill you get the chair.So it is very safe for both of us.</div>
+          </li>
+          <li>
+            <div class="box-title"><span class="box-icon minus"></span>I want to cancel my order. What do I do?</div>
+            <div class="box-hide">You just need contact us timely before order is shipped,then we can help you cancel
+              it.</div>
+          </li>
+        </ul>
+      </div>
+      <div class="tab-item">
+        <ul>
+          <li>
+            <div class="box-title"><span class="box-icon minus"></span>Do you charge sales tax?</div>
+            <div class="box-hide">No, we do not charge any sales tax imposed on any order unless it is purchased within
+              the state of CA or NJ. This includes orders in which the shipping address is in CA or NJ. Please Note:
+              Some states require that taxpayers fill out a “use tax” return and pay the equivalent of a sales tax in
+              their state. Please consult your state law to determine if you have to pay this tax.</div>
+          </li>
+          <li>
+            <div class="box-title"><span class="box-icon minus"></span>Do you offer quantity discounts?</div>
+            <div class="box-hide">Yes we can offer some discounts for multiple purchases,just feel free to contact us
+              before order.</div>
+          </li>
+          <li>
+            <div class="box-title"><span class="box-icon minus"></span>Do you price match?</div>
+            <div class="box-hide">Yes,always we will try to keep our prices as low as possible,and most often you won’t
+              find anything for less. However, if you do find a lower price please contact a representative to see if
+              we can match it. While comparing prices please be sure you include the shipping costs and any taxes. You
+              will often find a lower advertised price which is then marked up with an extreme shipping cost.</div>
+          </li>
+          <li>
+            <div class="box-title"><span class="box-icon minus"></span>What is your Return Policy?</div>
+            <div class="box-hide">You can return it for quality problem in 30 days if it can not be repaired with
+              accessories.But due to the much expensive postage,we do not accept any return without quality problem.Or
+              you need be in charge of the return postage and pay us $150 as shipping too.Thank you for your
+              understanding!Please keep the original packages if return,or it will not be acceptable!</div>
+          </li>
+          <li>
+            <div class="box-title"><span class="box-icon minus"></span>How do I know this purchase will be a secure
+              transaction?</div>
+            <div class="box-hide">We are always taking extra precautions to assure our sites are 100% secure. We are a
+              member of the Better Business Bureau and has partnered with AmeriCommerce to guarantee our customers have
+              a reliable, protected transaction when checking out online with a credit card. We also provide the option
+              of using a pay-pal account for your transaction.</div>
+          </li>
+          <li>
+            <div class="box-title"><span class="box-icon minus"></span>Can I purchase a gift certificate for your
+              stores?</div>
+            <div class="box-hide">Sometimes we can support it but sometimes not.So please contact us first if you
+              necessary.</div>
+          </li>
+        </ul>
+      </div>
+      <div class="tab-item">
+        <ul>
+          <li class="active">
+            <div class="box-title"><span class="box-icon minus lk-add trans"></span>Where are you located?</div>
+            <div class="box-hide trans">We are located in New Jersey and Los Angeles,USA</div>
+          </li>
+          <li>
+            <div class="box-title"><span class="box-icon minus trans"></span>Can I speak with someone directly?</div>
+            <div class="box-hide trans">Yes, you can contact us via email (service@realrelaxmassage.com)or call
+              917-617-6858</div>
+          </li>
+          <li>
+            <div class="box-title"><span class="box-icon minus trans"></span>What are your business hours?</div>
+            <div class="box-hide trans">9:00am-5:00pm from Monday to Friday</div>
+          </li>
+          <li>
+            <div class="box-title"><span class="box-icon minus trans"></span>Do you have a brick and mortar store or
+              are you only an online retailer?</div>
+            <div class="box-hide trans">We are an online retailer,but we have our warehouse in NJ and CA</div>
+          </li>
+          <li>
+            <div class="box-title"><span class="box-icon minus trans"></span>How long have you been in business?</div>
+            <div class="box-hide trans">5 yrs</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

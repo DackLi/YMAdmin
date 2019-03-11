@@ -4,11 +4,11 @@ import router from "@/router/index";
 import Config from "@/config";
 import store from "@/store/index";
 import { getToken } from "@/utils/token";
-
+console.log(Config.baseUrl)
 // 创建axios实例
 const http = axios.create({
   baseURL: Config.baseUrl,
-  timeout: 5000
+  timeout: Config.timeout
 });
 
 // 设置请求头部
@@ -17,7 +17,7 @@ axios.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded
 // 请求之前拦截器
 http.interceptors.request.use(
   config => {
-    if (store.getter.token) {
+    if (store.getters.token) {
       config.headers["token"] = getToken();
     }
     // 在发送请求之前做某件事 post序列化
@@ -28,6 +28,7 @@ http.interceptors.request.use(
         }
       }
     }
+    
     return config;
   },
   error => {
