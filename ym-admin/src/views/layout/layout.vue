@@ -41,6 +41,7 @@ export default {
       left: 0;
       z-index: 1001;
       overflow: hidden;
+      text-align: left;
     }
   }
   .drawer-bg {

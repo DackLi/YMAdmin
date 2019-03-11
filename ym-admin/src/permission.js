@@ -11,6 +11,8 @@ const whitleList = ['/login'];
 
 // permission judge function
 function hasPermission(roles, permissionRoles) {
+  console.log(roles)
+  console.log(permissionRoles)
   if (roles.indexOf('admin') >= 0) return true // admin permission passed directly
   if (!permissionRoles) return true
   return roles.some(role => permissionRoles.indexOf(role) >= 0)
@@ -28,7 +30,8 @@ router.beforeEach((to, from, next) => {
       // 登陆界面不为login的时候 判断用户是否存在userinfo
       if (store.getters.roles.length === 0) {
         store.dispatch('GetUserInfo', store.getters.userId).then((res) => {
-          let roles = res.roles
+          console.log(res)
+          const roles = res.roles // 注意：角色必须是一个数组！例如：['editor'，'develop']
           store.dispatch('GenerateRoutes',{ roles }).then(() => { // 根据权限生成可访问路径
             console.log(router)
             router.addRoutes(store.getters.addRouters) // 动态添加可访问路由表
@@ -43,6 +46,8 @@ router.beforeEach((to, from, next) => {
           })
         })
       } else {
+        console.log(store.getters.roles)
+        console.log(hasPermission(store.getters.roles, to.meta.roles))
         if (hasPermission(store.getters.roles, to.meta.roles)) {
           console.log(to.path)
           next()
