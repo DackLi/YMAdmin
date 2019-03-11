@@ -9,7 +9,7 @@ module.exports = {
     open: true,
     proxy: {
       '/api': {
-        target: 'https://www.easy-mock.com/mock/5c6525a7d758c80490517aba/vue3', // 对应自己的接口
+        target: 'https://www.fastmock.site/mock/82b2f92ab5bfed9bb60c8286a099327f/vue3', // 对应自己的接口
         changeOrigin: true,
         ws: true,
         pathRewrite: {
