@@ -1,9 +1,7 @@
-
 export default class Config {
-  construcor() {
-  }
+  construcor() {}
 }
-let baseUrl
+let baseUrl;
 switch (process.env.NODE_ENV) {
   case "development":
     baseUrl = "api"; // 本地请求

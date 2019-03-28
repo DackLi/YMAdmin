@@ -1,17 +1,16 @@
-
-import { constantRouterMap, asyncRouterMap } from '@/router/router'
+import { constantRouterMap, asyncRouterMap } from "@/router/router";
 /**
  * 判断用户权限是否与当前权限匹配
  * @param roles
  * @param route
- * 
+ *
  */
 
-function hasPermission(roles,route) {
+function hasPermission(roles, route) {
   if (route.meta && route.meta.roles) {
-    return roles.some((role) => route.meta.roles.includes(role))
+    return roles.some(role => route.meta.roles.includes(role));
   } else {
-    return true
+    return true;
   }
 }
 /**
@@ -20,18 +19,18 @@ function hasPermission(roles,route) {
  * @param roles
  */
 function filterAsyncRouter(routers, roles) {
-  const res = []
-  console.log(routers)
+  const res = [];
+  console.log(routers);
   routers.forEach(route => {
-    const tmp = {...route}
-    if (hasPermission(roles,tmp)) {
+    const tmp = { ...route };
+    if (hasPermission(roles, tmp)) {
       if (tmp.children) {
-        tmp.children = filterAsyncRouter(tmp.children, roles)
+        tmp.children = filterAsyncRouter(tmp.children, roles);
       }
     }
-    res.push(tmp)
+    res.push(tmp);
   });
-  return res
+  return res;
 }
 
 const permission = {
@@ -40,29 +39,29 @@ const permission = {
     addRouters: []
   },
   mutations: {
-    SET_ROUTERS: (state,routers) => {
-      state.addRouters = routers
-      state.routers = constantRouterMap.concat(routers)
+    SET_ROUTERS: (state, routers) => {
+      state.addRouters = routers;
+      state.routers = constantRouterMap.concat(routers);
     }
   },
   actions: {
-    GenerateRoutes({commit}, data) {
-      return new Promise((resolve) => {
-        const { roles } = data
-        let addRouters
-        if (roles.includes('admin')) {
-          addRouters = asyncRouterMap
+    GenerateRoutes({ commit }, data) {
+      return new Promise(resolve => {
+        const { roles } = data;
+        let addRouters;
+        if (roles.includes("admin")) {
+          addRouters = asyncRouterMap;
         } else {
-          addRouters = filterAsyncRouter(asyncRouterMap, roles)
+          addRouters = filterAsyncRouter(asyncRouterMap, roles);
         }
-        console.log(addRouters)
-        commit('SET_ROUTERS', addRouters)
-        resolve()
+        console.log(addRouters);
+        commit("SET_ROUTERS", addRouters);
+        resolve();
       }).catch(error => {
-        console.log(error)
-      })
+        console.log(error);
+      });
     }
   }
-}
+};
 
-export default permission
+export default permission;

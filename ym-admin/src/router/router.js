@@ -15,7 +15,5 @@ export const constantRouterMap = [
     component: () => import("@/views/errorPage/404"),
     hidden: true
   }
-]
-export const asyncRouterMap = [
-  { path: '*', redirect: '/404', hidden: true }
-]
+];
+export const asyncRouterMap = [{ path: "*", redirect: "/404", hidden: true }];
