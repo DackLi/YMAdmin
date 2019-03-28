@@ -30,6 +30,13 @@
 import variables from '@/style/variables.scss'
 export default {
   name: 'slideItem',
+  props: {
+    meunList: {
+      type: Object,
+      required: true
+    },
+    
+  },
   methods: {
     handleOpen(key, keyPath) {
       console.log(key, keyPath);

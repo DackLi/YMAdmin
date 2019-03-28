@@ -39,7 +39,7 @@ http.interceptors.request.use(
 // 返回拦截器
 http.interceptors.response.use(
   response => {
-    if (response.data.data.status === 401) {
+    if (response.data.status === 401) {
       Message.error("token失效请重新登陆")
       router.replace({
         path: "/login"

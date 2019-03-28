@@ -26,13 +26,15 @@ const user = {
       const userName = userInfo.username.trim();
       return new Promise((resolve, reject) => {
         loginUserName(userName, userInfo.password).then((res) => {
-          let data = res.data.data;
+          console.log(res)
+          let data = res.data;
           console.log(data)
           commit('SET_TOKEN', data.token);
           commit('SET_USER_ID', data.userId);
           setToken(data.token);
           resolve();
         }).catch(error => {
+          console.log(error)
           reject(error)
         })
       })
@@ -42,7 +44,8 @@ const user = {
       console.log(userid)
       return new Promise((resolve, reject) => {
         getUserInfo(userid).then(res => {
-          let data = res.data.data;
+          console.log(res)
+          let data = res.data;
           if (data.status == '200') {
             commit('SET_ROLES', data.roles)
             resolve(data)
